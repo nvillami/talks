@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+				<h2>The algebraic nature of computer graphics</h2>
+				<small> Dr. <a href="https://sites.google.com/site/nvillami/">Nelly Villamizar</a><br>Department of Mathematics, Swansea University 
+					
+<p></p><br><br><br><br>	<ul>		
+	Mathematics in the Digital Age, South West and Wales <span style="color:#ff336e";>IMA</span> branch <br>November 26th, 2020</ul></small>
+	</section>
+				<section> 
+<div class="r-stack">
+<img src="../../Dropbox/Figures/splines01.JPG" class="fragment">
+<p class="fragment"><b>Splines</b></p>
+</div>	</section><section>
+				<section><img img src="../../Dropbox/Figures/courant.jpg" class="fragment" data-fragment-index="3">
+<img src="../../Dropbox/Figures/courant_pic.jpg" class="fragment" data-fragment-index="1">   
+<p class="fragment" data-fragment-index="2">Richard Courant (1949)</p></section>
+					<section>
+						<h3>The Lorenz Equations</h3>
+
+						<div class="fragment">
+							\[\begin{aligned}
+							\dot{x} &amp; = \sigma(y-x) \\
+							\dot{y} &amp; = \rho x - y - xz \\
+							\dot{z} &amp; = -\beta z + xy
+							\end{aligned} \]
+						</div>
+					</section></section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>

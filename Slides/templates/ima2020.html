@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Math Plugin</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/whiteme.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+<section>
+				<h3>The algebraic nature of computer graphics</h3>
+				<small> Dr. <a href="https://sites.google.com/site/nvillami/">Nelly Villamizar</a><br>Department of Mathematics, Swansea University 
+					
+<p></p><br><br><br><br>	<ul>		
+	Mathematics in the Digital Age, <a href="https://ima.org.uk/branches/west-of-england/">South West and Wales IMA</a> branch <br>November 26th, 2020</ul></small>
+	</section>
+<section> 
+<div class="r-stack">
+<img src="../../Figures/splines01.JPG">
+<p class="fragment"><b style="color:white;">Splines</b></p>
+</div>	</section>
+					<section>
+					<section><div class="row"><div class="column">
+						<figure><img src="../../Figures/courant_pic.jpg" alt="courant" style="width:85%"><figcaption><small>R. Courant (1949)</small></figcaption></figure></div> <div class="column"> <figure><img src="../../Figures/zienkiewicz.png"  alt="Forest" style="width:100%"><figcaption><small>O. Zienkiewicz (1921-2009)</small></figcaption> </figure>   </div>
+</div>
+</section>
+
+<section>
+<h4>FEM to solve PDE's</h4>
+<div class="row">
+		<div class="column">
+		<div class="r-stack">
+			<img src="../../Figures/courant-white.png" style="width:50%" class="fragment fade-out" data-fragment-index="0">
+				<img src="../../Figures/loopSuport.png" style="width:50%" class="fragment">
+		</div>
+	</div>
+		<div class="column">
+			<div class="r-stack">
+				<img src="../../Figures/courant_hat.png" style="width:75%" class="fragment fade-out" data-fragment-index="0">
+				<img src="../../Figures/loop2.png" style="width:75%" class="fragment">
+			</div>
+		</div>
+	</div>
+</section>
+<section><div class="row"><div class="column">
+						<figure><img src="../../Figures/bezier.jpg" alt="Bezier" style="width:80%"><figcaption><small>P. Bézier (Renault)</small></figcaption></figure></div> <div class="column"> <figure><img src="../../Figures/casteljau.jpeg"  alt="de Casteljau" style="width:85%"><figcaption><small>P. de Casteljau (Citröen)</small></figcaption> </figure>   </div>
+</div>
+</section>
+<section><div class="row">
+	<div class="column"> <figure><img src="../../Figures/B.png"  alt="spline" style="width:90%"><figcaption><small>Bézier curve</small></figcaption> </figure>   
+	</div>
+	<div class="column">
+		<figure><img src="../../Figures/S.jpg" alt="Bezier" style="width:50%"><figcaption><small>Postscript font Times Roman</small></figcaption> </figure> 
+	</div> 
+	</div>
+<img src="../../Figures/bsplines1.png" alt="Bezier" style="width:40%">
+</section>
+<section>
+<figure><img src="../../Figures/avion_mesh.png" style="width:75%"><figcaption><small>Mustang Mk. III by M. Cel OpenVSP and flow5</small></figcaption></figure> 
+</section>
+<section>
+<figure><img src="../../Figures/GarisGame.jpg" style="width:75%"><figcaption><small>Subdivision Surfaces, T. DeRose, M. Kass, and T. Truong, Pixar Animation Studios</small></figcaption></figure> 
+</section>
+<section>
+<figure><img src="../../Figures/techo.jpg" style="width:100%"><figcaption><small>Architectual geometry, H. Pottman, M. Eigensatz, A. Vaxman and J. Wallner.</small></figcaption></figure> 
+</section>
+</section>
+
+<section>
+	<h4>Piecewise polynomial functions</h4>
+<div class="row">
+	<div class="column">	
+		<video data-autoplay src="../../Figures/timely_crop.mp4" style="width:100%">
+		</video>		<small> A. Lockwood</small>
+	</div>
+	<div class="column">
+<small>\[\mathbf{p}_1=(1-t)\mathbf{c}_1+t\mathbf{c}_2\qquad
+		 \mathbf{p}_2=(1-t)\mathbf{c}_2+t\mathbf{c}_3\\
+		 \mathbf{p}_3=(1-t)\mathbf{c}_3+t\mathbf{c}_4\\
+		 \mathbf{q}_1=(1-t)\mathbf{p}_1+t\mathbf{p}_2\qquad
+		 \mathbf{q}_2=(1-t)\mathbf{p}_2+t\mathbf{p}_3\]</small>
+<div class="r-stack">
+	<p class="fragment fade-out" data-fragment-index="0">
+		<img src="../../Figures/Bezier-2.png" style="width:50%"><img src="../../Figures/Bezier-3.png" style="width:50%"></p>
+	<p class="fragment">
+		<img src="../../Figures/Bcubic-3.png" style="width:70%"></p>
+</div>					
+
+	</div>	
+</div>
+<small><p>\[\begin{aligned} \mathbf{s}&amp;\; =\;(1-t)\mathbf{q}_1+t\mathbf{q}_2
+	 \; =\;  (1-t)^3\mathbf{c}_1+3t(1-t)^2\mathbf{c}_2+3t^2(1-t)\mathbf{c}_3+t^3\mathbf{c}_4
+	 \end{aligned}		\]</p></br></small>
+</section>
+<section>
+	<h3>Higher dimensional splines</h3>
+<div class="row">
+	<div class="column">	
+		<video data-autoplay loop src="../../Figures/tensor2.mp4" style="width:90%">
+		</video>
+		 <small> García-Puente, Sottile and Chungang
+		</small>
+	</div>
+	<div class="column">
+<img src="../../Figures/ms-b.png" style="width:68%">
+<img src="../../Figures/MS-6split-a.png" style="width:30%">
+<img src="../../Figures/torus1.png" style="width:34%">
+<img src="../../Figures/cube-ps.png" style="width:42%">
+ </div>	
+</div>
+<img src="../../Figures/twotriangles-a.png" style="width:10%">
+<small> A pair of polynomials $(f,g)$ is $C^r$-continuous across a common face iff  \[f - g = \ell^{r+1} h \Leftrightarrow f-g\in \langle \ell^{r+1}\rangle	\]
+	</small>
+</section>
+<section>
+<h3>Splines and fat point ideals</h3>
+<p class="fragment" data-fragment-index="1">$\ell=a x+b y+c z\quad \longleftrightarrow \quad P = [a :b:c]\in \mathbb{P}^ 2 $</p>	
+<p class="fragment" data-fragment-index="2">$\langle \ell_1^{r+1}, \cdots, \ell_m^{r+1}\rangle_d \quad \longleftrightarrow \quad \wp_1^{d-r}\cap\cdots\cap\wp_m^{d-r}$</p>
+<p class="fragment" data-fragment-index="3"><img src="../../Figures/fan-a.png" style="width:35%">
+<img src="../../Figures/plot6-a.png" style="width:20%"></p>
+</section>
+
+<section><section>
+<h3>Splines, Algebra, and Combinatorics</h3>
+	<div class="row">
+	<div class="columna">
+<img src="../../Figures/oct3.png" style="width:100%">
+	</div>
+			<div class="columna">
+<img src="../../Figures/gen.png" style="width:100%">
+	</div>	<div class="columna">
+<img src="../../Figures/bipyramid-a.png" style="width:100%">
+	</div>	
+</div></section>
+<section><h3>Splines, Algebra, and Combinatorics</h3>
+<div class="row">
+	<div class="columna">	
+	<img src="../../Figures/graph_regOcta.png" style="width:92%">
+	</div>	
+<div class="columna">
+		<img src="../../Figures/graph_genOctahedron2.png" style="width:82%">
+	</div><div class="columna">	
+			<img src="../../Figures/graph_bipyramid-a.png" style="width:94%">
+		</div>	
+	</div>
+</section>
+</section>
+<section><section data-markdown>
+	<script type="text/template">
+		## Open problems
+		- Complex shape representation: objects with arbitrary topology, fitting and isogeometric analysis applications.   <!-- .element: class="fragment" data-fragment-index="2" -->
+		- Dimension of trivariate splines: fat point ideals, generic partitions and combinatorial dimension formulas. <!-- .element: class="fragment" data-fragment-index="1" -->	
+	</script></section>
+<section>
+<img src="../../Figures/cloud1-a.png" style="width:50%"><img src="../../Figures/cloud2-a.png" style="width:50%">
+	<small>	Blidia, Mourrain, and Xu.</small>
+</section>
+<section>
+	<h3>Many thanks!!</h3> <!-- .element: class="fragment" data-fragment-index="1" -->
+	<ul>	 Web: <a href="https://sites.google.com/site/nvillami/">https://sites.google.com/site/nvillami</a> </ul>  <!-- .element: class="fragment" data-fragment-index="2" -->
+</section>	
+</section>
+
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({dependencies: [
+					{ src: './mouse-pointer.js' }],
+				history: true,
+				transition: 'linear',
+
+				math: {
+					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				plugins: [ RevealMarkdown, RevealMath ]
+			});
+		</script>
+
+	</body>
+</html>
