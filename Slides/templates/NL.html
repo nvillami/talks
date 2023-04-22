@@ -1,0 +1,691 @@
+<!doctype html>
+<html lang="en">
+
+ <head>
+  <meta charset="utf-8">
+
+  <title>reveal.js - Math Plugin</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../dist/reveal.css">
+  <link rel="stylesheet" href="../dist/theme/whiteme.css" id="theme">
+  	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+  <style>
+   div.fixed {
+   position: fixed;
+   top: 0;
+   right: -70px;
+   width: 300px;
+   }
+  </style>
+  <style>
+  div.fijo {
+  position: fixed;
+  bottom:-100px;
+  right: -100px;
+  width: 500px;
+  }
+ </style> 
+  <style>
+	div.fijos {
+	position: fixed;
+	bottom:-50px;
+	right: -100px;
+	width: 500px;
+	}
+</style>  
+<style>
+ table, th, td {
+ border: 1px solid black;
+ border-collapse: collapse;
+ }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+  * {
+  box-sizing: border-box;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  .columnn {
+  float: left;
+  padding: 10px;
+  }
+  
+  .left {
+  width: 70%;
+  }
+  
+  .right {
+  width: 40%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+ </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+  * {
+  box-sizing: border-box;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  .colummn {
+  float: left;
+  padding: 10px;
+  }
+  
+  .left {
+  width: 45%;
+  }
+  
+  .right {
+  width: 55%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;l
+  clear: both;
+  }
+ </style>
+ </head>
+
+ <body>
+
+  <div class="reveal">
+
+   <div class="slides">
+<section>
+    <h4>Applied Algebra and Geometry</h4>
+    <small> Dr. <a href="https://sites.google.com/site/nvillami/">Nelly Villamizar</a><br>Associate Professor<br>Department of Mathematics, Swansea University 
+     
+<p></p><br><br><br><br>  
+<a href="https://www.tue.nl/en/research/research-groups/mathematics/discrete-mathematics">Discrete Mathematics Clouster</a>, <a href="https://www.tue.nl/en/our-university/departments/mathematics-and-computer-science">Department of Mathematics and Computer Science</a>, Eindhoven University of Technology <br>April 24, 2023</small>
+ </section>
+<section>
+<h4> Academic journey</h4>
+<a href="https://www.google.com/maps/place/Pamplona,+North+Santander,+Colombia/@11.0117989,-50.5846679,3z/data=!4m5!3m4!1s0x8e68811722aa0c15:0x83b790e98f7db7d4!8m2!3d7.3733625!4d-72.6525879?hl=en"><img src="../../Figures/mapa2021.png" style="width:100%"></a> 
+</section>
+<section>
+<h4>Scientific interests</h4>
+<section>
+<small style="text-align:left;">
+<p class="fragment" data-fragment-index="1">
+	<b><span style="color: #2a76dd;">Algebraic Spline Geometry</span></b> Computer Aided Design and Manufacturing (CAD/CAM) will be greatly enhanced by exploiting mathematical techniques covering the full spectrum from Algebraic Geometry to Computer Aided Geometric Design (CAGD):</p>
+<ul>
+<li class="fragment" data-fragment-index="3">
+to develop novel shape representation techniques;</li>
+<li class="fragment" data-fragment-index="4">representaion of complex shapes (mathematical foundations, computability)
+</li>
+<li class="fragment" data-fragment-index="5"> EPSRC New Investigator Award grant 2021–2024;
+</li>
+<li class="fragment" data-fragment-index="6">
+spatial aggregation in geometric deep learning with trainable, continuous kernel functions, showing methods for image graph representations and  meshes.
+</li>
+</ul></small>
+<div class="r-stack">
+	<div class="fragment fade-in-then-out" data-fragment-index="2"><img src="../../Figures/C1smooth.png" style="width:28%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../Figures/peterSplineNet2.png" style="width:30%"></div>
+		<div class="fragment current-visible" data-fragment-index="4"><img src="../../Figures/peel_off_sphere.png" style="width:43%">&nbsp;&nbsp;&nbsp;<img src="../../Figures/propeller.png" style="width:30%"></div>
+			<img class="fragment" data-fragment-index="6" src="../../Figures/gdl2.png" style="width:45%">
+			<span class="fragment" data-fragment-index="6" style="text-align:border-bottom;font-size:16px"></br></br></br></br></br></br></br></br></br></br></br><a href="https://doi.org/10.1109/CVPR.2018.00097">Fast Geometric Deep Learning with Continuous B-Spline Kernels</a>, Fey et al., 2018.</span>
+			</div>								
+</section>
+<section>
+</br><small style="text-align:left;">	<b><span style="color: #2a76dd;">Algebraic methods in optimal control:</span></b> 
+improved optimal trajectories are obtained by studying the <span style="color: #2a76dd;">solvability of the polynomial system</span> associated to the optimality conditions (pole placement, optimality conditions for model
+predictive control, parametrization of switching surface):
+						<p style="text-align:center;font-size:24px" >For $A,Q\in\mathbb{R}^{n\times n}\,,B\in \mathbb{R}^{n\times m}\,, R\in\mathbb{R}^{m\times m}$
+							solve for $X\in\mathbb{R}^{n\times n}$&nbsp;:
+							\[A^tX+X A-X BR^{-1}B^tX+Q=0\]
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Optimal feedback control:&nbsp;&nbsp; $u^*(x):=-(R^{-1}B^t X)x$&nbsp;.</p></small>
+<img src="../../Figures/doubleintoc.jpg" style="width:30%">
+	<img src="../../Figures/hjb.jpg" style="width:30%">
+		<img src="../../Figures/groebner.jpg" style="width:30%">						
+					<!--	<p style="text-align:left;font-size:20px">  &#128209;&nbsp; S. Gui, D. Kalise, and N. Villamizar, <span style="color: #2a76dd;">Chattering-free quasi time optimal control </span> in preparation, 2022.
+						</p>-->
+<small style="text-align:left;">To develop effective methods for accurate identification of switching curves.</small>				
+</section>
+<section>
+</br><small style="text-align:left;"><p><b><span style="color: #2a76dd;">Rigidity and linkages:
+		<img src="../../Figures/polyhedralPicture.png" style="width:25%">&nbsp;&nbsp;<img src="../../Figures/VSplit1.png" style="width:15%">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../Figures/VSplit2.png" style="width:15%"></span></b></p>			
+<div class="row">
+<div class="column">
+<ul><li style="text-align:left;"> Polyhedral pictures, cofactor (rigidity) matrix, vertex splitting techniques.</li>
+	<li style="text-align:left;"> Algorithmic construction of <span style="color: #2a76dd;"> linkages </span>following prescribed motions.</li></ul>
+</br>
+ </br> </br>
+</small>
+</div> 
+<div class="column"> 
+<video data-autoplay loop src="../../Figures/Ellipse.mp4" style="width 100%">
+</video>
+</div>
+</div> 
+<p style="text-align:right;font-size:16px">
+Gallet et al., <a href="https://doi.org/10.1090/mcom/3120 ">Planar linkages following a prescribed motion</a>, 2017.
+</p>
+</section>
+<section>
+</br><small style="text-align:left;"><p><b><span style="color: #2a76dd;">Rigidity and linkages:
+			<img src="../../Figures/polyhedralPicture.png" style="width:25%">&nbsp;&nbsp;<img src="../../Figures/VSplit1.png" style="width:15%">&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../Figures/VSplit2.png" style="width:15%"></span></b></p></small>				
+<div class="row">
+<div class="column">
+<small style="text-align:left;">	
+		<ul><li style="text-align:left;"> Polyhedral pictures, cofactor (rigidity) matrix, vertex splitting techniques.</li>
+			<li style="text-align:left;"> Algorithmic construction of <span style="color: #2a76dd;"> linkages </span>following prescribed motions.</li></ul>
+		</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="../../Figures/JohnHancocksSignature.png" style="width:50%"> </br> </br>
+</small>		
+</div> 
+<div class="column"> 
+
+<video data-autoplay src="../../Figures/HancockJ3D.mp4" style="width:100%">
+</video>
+</div>
+</div> 
+<p style="text-align:right;font-size:16px">
+	Gallet et al., <a href="https://doi.org/10.1090/mcom/3120 ">Planar linkages following a prescribed motion</a>, 2017.
+</p>
+</section>	
+</section>
+<section>
+<section>
+<h4>Discretization: FEM to solve PDE's</h4>
+<div class="row">
+ <div class="column">
+<img src="../../Figures/courant_pic.jpg" alt="courant" style="width:90%">
+<small>R. Courant (1949)</small>
+  <div class="r-stack">
+ 	<p class="fragment fade-out" data-fragment-index="0">
+ 		<img src="../../Figures/Bezier-2.png" style="width:50%"><img src="../../Figures/Bezier-3.png" style="width:50%"></p>
+ 			<p class="fragment">
+ 				<img src="../../Figures/Bcubic-3.png" style="width:73%"></p>
+ 			<p class="fragment">
+ 			<img src="../../Figures/C1smooth.png" style="width:70%"></p>	
+ 			</div> <small>Bernstein-Bézier methods</small>	 
+ </div> 
+ <div class="column">
+   <img src="../../Figures/courant-white.png" style="width:37%"> <img src="../../Figures/courant_hat.png" style="width:60%">
+   <small>$C^0$-(linear) Courant element</small></br></br>
+   <img src="../../Figures/levels.jpg" style="width:86%">
+  </div>
+ <div class="column">
+  <img src="../../Figures/loopSuport.png" style="width:45%">
+  <img src="../../Figures/loop2.png" style="width:50%"></br>
+    <small>$C^2$-(quartic) Loop subdivision</small></br></br></br>
+   <img src="../../Figures/mixed2.jpg" style="width:70%">
+   </div>
+ </div>
+</section>
+<section>
+ <h4>Isogeometric Analysis= CAGD + FEM</h4>
+ <small><a href="https://doi.org/10.1016/j.cma.2004.10.008">Hughes, Cottrell, and Bazilevs (2005) </a></small> 
+ <figure><img src="../../Figures/avion_mesh.png" style="width:75%"><figcaption><small>Mustang Mk. III by M. Cel VSP and flow5</small></figcaption></figure> 
+ </section>
+<!--<section>
+<h4>Splines and data</h4>
+ <div class="row">
+  <div class="columnn left">
+<img src="../../Figures/terrain2.png" style="width:100%">
+  </div>
+ <div class="columnn right">
+ <img src="../../Figures/levels.jpg" style="width:55%">
+ <img src="../../Figures/mixed2.jpg" style="width:45%">
+ </div>
+</div>
+  <small><a href="https://doi.org/10.1016/j.cag.2015.03.006">Locally refined spline surfaces for representation of terrain data (2015)</a></br>
+SINTEF, Norway</small>
+</section>
+-->
+</section>
+
+
+<section>
+ <h4>Higher dimensional splines</h4>
+<div class="row">
+ <div class="column"> 
+  <video data-autoplay loop src="../../Figures/tensor2.mp4" style="width:70%">
+  </video>
+   <p style="text-align:center;font-size:20px"><a href="https://dl.acm.org/doi/10.1145/2019627.2019629">García-Puente, Sottile, and Zhu (2011)
+  </a></br></p>
+ <p style="text-align:left;font-size:20px">
+ E. Postinghel, F. Sottile, and N. Villamizar</br>
+ &#128209;&nbsp;<a href="https://doi.org/10.1112/jlms/jdv024">Degenerations of toric varieties</a>, Journal of the London Mathematical Society, 92 (2), 223-241, 2015.</pr>
+ </div>
+ <div class="column">
+<img src="../../Figures/ms-b.png" style="width:100%">
+<img src="../../Figures/torus1.png" style="width:38%">
+<img src="../../Figures/cube-ps.png" style="width:46%">
+ </div> 
+</div>
+<img src="../../Figures/twotriangles-b.png" style="width:10%">
+<small> A pair of polynomials $(f,g)$ is $C^r$-continuous across a common face iff \[f - g = \ell^{r+1} h \Leftrightarrow f-g\in \langle \ell^{r+1}\rangle \,. \]
+&nbsp; &nbsp; <a href="https://projecteuclid.org/euclid.bams/1183535131">Strang (1973) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>&nbsp;&nbsp;<a href="https://doi.org/10.1090/S0002-9947-1988-0965757-9">Billera (1988) &nbsp; &nbsp; &nbsp; &nbsp;</a>
+ </small>
+</section>
+<section>
+<section>
+<h4>Dimension of spline spaces</h4>
+<div style="background-color:#eef2f6"> 
+<small style="text-align:left;">
+<b>&nbsp;Theorem:</b>&nbsp;
+For a simplicial complex $\Delta\subseteq \mathbb{R}^2$
+\begin{align*}
+& {\scriptsize \dim S_d^r(\Delta) \leq
+\binom{d+2}{2}+f_1^0\binom{d+2-(r+1)}{2}-\sum_{i,\,\tilde{t}_i=1}^{f_0^0}\binom{d+2-(r+1)}{2}}\\[.5ex]
+&{\scriptsize -\sum_{i=1,\, \tilde{t}_i\geq
+2}^{f_0^0}\biggl[\tilde{t}_i\binom{d+2-(r+1)}{2}\hspace{-0.1cm}-\tilde{b}_i\,\binom{d+2-\tilde{\Omega}_i}{2}-\tilde{a}_i\,\binom{d+2-(\tilde{\Omega}_i+1)}{2}\biggr]}
+\end{align*}
+&nbsp;&nbsp;$\tilde{t}_i=$ number of edges connecting the vertex $\gamma_i$ to 
+the boundary or vertices of lower index,</br> &nbsp;&nbsp; 
+&nbsp; ${\small \tilde\Omega_i=\bigr\lfloor\frac{\tilde{t}_i r}{\tilde{t}_i-1}\bigr\rfloor+1,\quad
+\tilde{a}_i=\tilde{t}_i (r+1) +(1-\tilde{t}_i)\tilde \Omega_i,}$&nbsp; and &nbsp; ${\small \tilde{b}_i=\tilde{t}_i-1-\tilde{a}_i.}$
+</small>
+</div>
+</br>
+<p style="text-align:left;font-size:20px">
+B. Mourrain and N. Villamizar</br> 
+&#128209;&nbsp;<a href="https://doi.org/10.1016/j.jsc.2012.10.002">Homological techniques for the analysis of the dimension of spline spaces</a>, 2013.</br>
+&#128209;&nbsp;<a href="https://doi.org/10.1007/s11786-014-0187-8">Dimension of spline spaces on tetrahedral partitions</a>, 2014.</br>
+&#128209;&nbsp;<a style="font-size:20px" href="https://doi.org/10.1007/978-3-319-08635-4_10">Spline spaces on triangulations</a>, 2014.</br>
+D. Toshniwal and N. Villamizar</br>
+&#128209;&nbsp; <a href="https://doi.org/10.1016/j.aam.2022.102412"> Algebraic methods for supersmooth spline spaces </a> <a href="https://arxiv.org/abs/2107.06842">[arXiv:2107.06842]</a> Advances in applied mathematics, 142: 102412, 2023.
+</p>
+<div class="fixed">
+<img src="../../Figures/Scc3.png" style="width:55%"> 
+</div>
+</section> 
+<section>
+	<h4>Hierarchical box splines</h4>
+	<div class="row">
+		<div class="column">
+		</br> <small style="text-align:left;"><span style="color: #2a76dd;">Box splines</span> have small support, are positive inside their support, and form a partition of unity.</br></br>
+	
+	They allow to define hierarchical spline spaces and the construction of spaces with adaptive
+	<span style="color: #2a76dd;"> local refinement</span>.</small>
+	</div>
+	<div class="column">
+<div class="r-stack">
+	<p class="fragment fade-out" data-fragment-index="0">
+		<img src="../../Figures/loopSuport.png" style="width:40%">
+			<img src="../../Figures/loop2.png" style="width:40%"></p> 
+			
+			<p class="fragment"><img src="../../Figures/fox.png" style="width:70%"></br><span style="color:#BEBEBE;font-size:20px;">Yvar et al. 2005.</span></p>
+			
+		</div>
+		
+	</div>
+</div> 
+
+<img src="../../Figures/grids_talk.png" style="width:100%">
+	
+</section>
+<section>
+	<h4>Hierarchical box splines</h4>
+	<img src="../../Figures/boxsplinering.png" style="width:25.5%">
+		<img src="../../Figures/cara.png" style="width:34.9%">
+			<img src="../../Figures/hierarchy.png" style="width:31.4%">
+			</br>
+			
+			<p style="text-align:left;font-size:20px;"> N. Villamizar, A. Mantzaflaris, and B. Jüttler</br>
+			&#128209;&nbsp; <a href="https://doi.org/10.1016/j.cagd.2015.11.004">Characterization of hierarchical quartic box splines on a three-directional grid, </a> Computer Aided Geometric Design, 41, 47-61, 2016. </br>
+		&#128209;&nbsp; <a href="https://arxiv.org/abs/2011.01919">Completeness characterization of type-I box splines</a> <a href="https://arxiv.org/abs/2011.01919">[arXiv:2011.01919]</a>,
+		Springer INdAM Series, 2021.
+	</br></br>
+D. Toshniwal and N. Villamizar</br>
+&#128209;&nbsp; <a href="https://doi.org/10.1016/j.cagd.2020.101880"> Dimension of polynomial splines of mixed smoothness on T-meshes</a> <a href="https://arxiv.org/abs/1912.13118">[arXiv:1912.13118]</a>, Computer Aided Geometric Design, 80, pp. 101880, 2020. 
+</p>
+
+</section>
+<section>
+	<h4>Algebraic tools</h4>
+<small style="text-align:left;">
+<ul>
+	<li class="fragment" data-fragment-index="1">Homological algebra: Billera-Schenck-Stillman chain 
+</br>
+	${\scriptsize \mathcal{R}/\mathcal{J}\colon
+	0\rightarrow\bigoplus\limits_{\iota\in\Delta_3}{R}[\iota]\xrightarrow{\overline{\partial}_3} \bigoplus\limits_{\sigma\in\Delta_2^\circ}{R}/ J(\sigma) \xrightarrow{\overline{\partial}_2} \bigoplus\limits_{\tau\in\Delta_1^\circ} R/J(\tau) \xrightarrow{\overline{\partial}_1} \bigoplus\limits_{\gamma\in\Delta_0^\circ} R/ J(\gamma) \rightarrow 0}
+	$</br><img class="fragment" data-fragment-index="2" src="../../Figures/MS-closed-smaller-ps.png" style="width:35%"></li>
+	<li class="fragment" data-fragment-index="3"> Apolarity, inverse system of Macaulay (Emsalem, Iarrobino).</li>
+	<li class="fragment" data-fragment-index="4"> Inductive procedure to determine the dimension of fat points ideals (Cooper, Harbourne, Teitler).</li>	
+	<li class="fragment" data-fragment-index="5">Walschmit constant, vertex splitting (rigidity).</li>
+</ul></small>		
+</section>	
+<section>
+<h4>Dimension formula trivariate splines</h4>
+<div class="r-stack">
+<p class="fragment" style="line-height:0.01">
+<img src="../../Figures/oct3.png" style="width:23%">&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/gen.png" style="width:23%">&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/bipyramid-a.png" style="width:23%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/graph_regOcta.png" style="width:18%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/graph_genOctahedron2.png" style="width:18%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/graph_bipyramid-a.png" style="width:20%"></p>
+<p class="fragment fade-out" data-fragment-index="0">
+<img src="../../Figures/MS-closed-smaller-ps.png" style="width:35%">&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/MS-open-star.png" style="width:35%">&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/MS-closed2.png" style="width:21%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</p>
+</div> 
+<p style="text-align:left;font-size:20px"> M. DiPasquale and N. Villamizar</br>
+&#128209;&nbsp; <a href="https://dx.doi.org/10.1137/20M1341118"> A lower bound for splines on tetrahedral vertex stars</a>
+<a href="https://arxiv.org/abs/2005.13043">[arXiv:2005.13043]</a> 
+SIAM Journal on Applied Algebraic Geometry, 5(2), pp. 250-277, 2021.</br>
+&#128209;&nbsp; <a href="https://arxiv.org/abs/2007.12274"> A lower bound for tetrahedral splines in large degree</a> <a href="https://arxiv.org/abs/2007.12274">[arXiv:2007.12274]</a>, Constructive Approximation, 2023.</br>
+</p>
+</br></br>
+</section>
+					<!--<section><h4>First dimension formula trivariate splines</h4>
+						<img src="../../Figures/MS-closed-smaller-ps.png" style="width:35%">&nbsp;&nbsp;&nbsp;
+						<img src="../../Figures/MS-open-star.png" style="width:35%">&nbsp;&nbsp;&nbsp;
+						<img src="../../Figures/MS-closed2.png" style="width:21%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<small style="text-align:left;"> M. DiPasquale and N. Villamizar </br>
+						&#128209;&nbsp; <a href="https://arxiv.org/abs/2005.13043">A lower bound for splines on tetrahedral vertex stars</a>
+						<a href="https://arxiv.org/abs/2005.13043">[arXiv:2005.13043]</a> 
+						SIAM Journal on Applied Algebraic Geometry, 5(2), pp. 250-277, 2021. </br>
+						&#128209;&nbsp; <a href="https://arxiv.org/abs/2007.12274"> A lower bound for tetrahedral splines in large degree</a> <a href="https://arxiv.org/abs/2007.12274">[arXiv:2007.12274]</a>, 2021.
+						</small> 
+						</section>-->
+	<section>
+						<h4>Lower bound = generic dimension</h4>
+						<div class="row">
+							<div class="column"> 
+								<img src="../../Figures/torus1.png" style="width:50%">
+									<img src="../../Figures/cube-ps.png" style="width:65%">
+									</div> 
+									<div class="column"> 
+										<small><table style="width:100%">
+												<tr>
+													<th>$r$</th>
+													<th>$d$</th> 
+													<th>$\binom{d+3}{3}$</th>
+													<th>BB</th>
+													<th>NewBound</th>
+													<th>$\dim$</th>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>4</td>
+													<td>35</td>
+													<td>35</td>
+													<td>24</td>
+													<td>35</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td><span style="color: #f92672;">5</span></td>
+													<td>56</td>
+													<td>93</td>
+													<td>96</td>
+													<td>96</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>6</td>
+													<td>84</td>
+													<td>237</td>
+													<td>240</td>
+													<td>240</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td>6</td>
+													<td>84</td>
+													<td>84</td>
+													<td>60</td>
+													<td>84</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td><span style="color: #f92672;">8</span></td>
+													<td>165</td>
+													<td>351</td>
+													<td>380</td>
+													<td>380</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td>9</td>
+													<td>220</td>
+													<td>663</td>
+													<td>696</td>
+													<td>696</td>
+												</tr>
+											</table><p> </p>
+											<table style="width:100%">
+												<tr>
+													<th>$r$</th>
+													<th>$d$</th> 
+													<th>$\binom{d+3}{3}$</th>
+													<th>MV</th>
+													<th>NewBound</th>
+													<th>$\dim$</th>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>8</td>
+													<td>165</td>
+													<td>165</td>
+													<td>79</td>
+													<td>165</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td><span style="color: #f92672;">9</span></td>
+													<td>220</td>
+													<td>220</td>
+													<td>268</td>
+													<td>268</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>10</td>
+													<td>286</td>
+													<td>352</td>
+													<td>586</td>
+													<td>586</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td>11</td>
+													<td>364</td>
+													<td>364</td>
+													<td>148</td>
+													<td>364</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td><span style="color: #f92672;">12</span></td>
+													<td>455</td>
+													<td>455</td>
+													<td>425</td>
+													<td>455</td>
+												</tr>
+												<tr>
+													<td><span style="color: #2a76dd;">3</span></td>
+													<td>13</td>
+													<td>560</td>
+													<td>560</td>
+													<td>856</td>
+													<td>856</td>
+												</tr>
+											</table>
+										</small>
+									</div>
+								</div>
+							</section>
+							<section>
+								<h4>Lower bound on the dimension of (any) tetrahedral splines for degree <th>$d\geq 8r+1$</th> </h4> 
+								<p style="text-align:left;font-size:20px">
+									P. Alfeld, M. Dipasquale, M. Sirvent, T. Sorokina, N. Villamizar, W. Whiteley, and B. Yuan</br>
+								&#128209;&nbsp; <a href=""> Algebraic geometry, Bernstein-Bézier analysis, and multivariate spline spaces</a>, 2023.
+</section>
+</section>
+<section>
+<h4>Splines and tensor decomposition</h4>
+<p class="fragment" data-fragment-index="1">\[\ell=a x+b y+c z\; \longleftrightarrow \; P = [a :b:c]\in \mathbb{P}^ 2 \]</p> 
+<p class="fragment" data-fragment-index="2">$\langle \ell_1^{r+1}, \cdots, \ell_m^{r+1}\rangle_d \;\longleftrightarrow \wp_1^{d-r}\cap\cdots\cap\wp_m^{d-r}\quad$</p>
+<p class="fragment" data-fragment-index="3"><img src="../../Figures/fan-a.png" style="width:30%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="../../Figures/plot6-a.png" style="width:18%"></p>
+
+<p class="fragment" data-fragment-index="4" style="text-align:left;font-size:20px"> M. Gallet, K. Ranestad, and N. Villamizar</br> 
+&#128209;&nbsp; <a href="https://dx.doi.org/10.4310/ARKIV.2018.v56.n1.a6"> Varieties of apolar subschemes of toric surfaces</a> <a href="https://arxiv.org/abs/1601.00694">[arXiv:1601.00694]</a> Arkiv för Matematik, 56 (1), pp. 73-99, 2018. 
+ </p>
+ </section>
+<section> 
+<h4>Ongoing work and Leadership</h4><div class="fijos">
+	<img class="fragment fade-in-then-out" data-fragment-index="1" src="../../Figures/oranges.webp" style="width:35%"><img class="fragment fade-in-then-out" data-fragment-index="3" src="../../Figures/cube22.png" style="width:35%"><img class="fragment fade-in-then-out" data-fragment-index="6" src="../../Figures/peel_off_sphere.png" style="width:75%"><img class="fragment fade-in-then-out" data-fragment-index="9" src="../../Figures/ecco2018.png" style="width:25%"></div>
+<span style="font-size:24px;"> 
+<ul>
+<li class="fragment" data-fragment-index="1">Splines on oranges (Bernstein-Bézier methods + Hilbert series).	</li>
+<li class="fragment"  data-fragment-index="2">Stanley-Reisner ring generators and Bernstein-Bézier spline bases.</li>
+<li class="fragment" data-fragment-index="3">Macaulay2 package for $G^r$-splines (<a href="https://doi.org/10.5281/zenodo.1249362">G+Smo</a>+<a href="http://axel.inria.fr/index.html">Axl</a>).</li>
+<li  class="fragment" data-fragment-index="4">IT-global</a> Cambridge: <a href="https://www.iti-global.com/cadfix">CADfix</a>.</li>
+<li class="fragment" data-fragment-index="5">Machine learning control surfaces Sam. </li>	
+<li class="fragment" data-fragment-index="6">
+Algebraic Spline Geometry: towards algorithmic shape representation</br>
+<span style="font-size:25px;">Principal Investigator</span>, <a href="https://gtr.ukri.org/projects?ref=EP%2FV012835%2F1">EPSRC New Investigator award</a>, 2021-24<ul>
+<li> 2 years postdoctoral researcher under my supervision</li>
+<li> 20% of PI time for 3 years.</li>
+</ul>
+<!--<ul>
+ <li>Beyond multivariate spline spaces on planar partitions
+ </li>
+<li> Geometric continuity methods for complex shapes
+</li>
+<li>Numerical algorithms for locally adaptive spline basis functions.
+</li>
+</ul> 
+</li>-->
+<li class="fragment" data-fragment-index="7"> <a href="https://sites.google.com/view/appliedalgebraandgeometry">Applied Algebra and Geometry Research Network</a>, 2017-present</br>
+<ul><li>York + Edinburgh + Oxford + Swansea</li>
+<li>LMS, Edinburgh Mathematical Society, Glasgow Mathematical Journal Trust.</li>
+</ul>
+</li> 
+<li class="fragment" data-fragment-index="7"> <a href="https://sites.google.com/view/wish2021-group3">WiSh Group Women in Shape Analysis</a>, 2021-present
+<li class="fragment" data-fragment-index="9"> <a href="http://fardila.com/SFSUColombia/ecco.html">Colombia combinatorics initiative</a>, (2003)2016-present</br>
+Steering committee & scientific committee ECCO'24.
+</li>
+</ul>
+</section>
+<section> 
+<h4>Discrete Algebra and Geometry Group (DAG) + NL</h4>
+<span style="font-size:24px;"> 
+<ul>
+<li class="fragment" data-fragment-index="1">Discrete Mathematics clouster (symmetry, and tensor decomposition, links with signal processing, numerical linear algebra, computer vision, and data science).	</li>
+<li class="fragment"  data-fragment-index="2">Department of Mathematics and Computer Science:
+<ul><li><a href="https://www.tue.nl/en/research/research-groups/mathematics/discrete-mathematics#">DM</a> Discrete Mathematics 
+	</li>
+	<li>Algorithms, Geometry and Applications (<a href="https://alga.win.tue.nl">ALGA</a>)</li>
+		<li> Visualization (<a href="https://www.tue.nl/en/research/research-groups/data-science/visualization/visualization">VIZ</a>)</li>
+		<li><a href="https://www.tue.nl/en/research/research-groups/mathematics/center-for-analysis-scientific-computing-and-applications/scientific-computing-1">Scientific Computing</a>
+</li>
+</ul>		
+<li class="fragment" data-fragment-index="3">Department of <a href="https://www.tue.nl/en/our-university/departments/mechanical-engineering">Mechanical Engineering</a> and <a href="https://www.tue.nl/en/our-university/departments/industrial-design">Industrial Design</a>; <a href="https://asci.tudelft.nl">ASCI</a> Advanced School for Computing and Imaging</li>
+<li class="fragment" data-fragment-index="4">DAG beacon for
+	applied algebra and geometry in Europe for graduate students and researchers, with experts in Topological
+	Data Analysis, Combinatorics, Commutative Algebra, Algebraic Statistics, Polynomial Optimization, and
+	Algebraic Spline Geometry.</li>
+<li  class="fragment" data-fragment-index="5">External funding initiatives Dutch Research Council (NWO), European Research Council (ERC), European Science Foundation (ESF) remit.</li>
+<li class="fragment" data-fragment-index="6">Doctoral Networks Marie Skłodowska-Curie Actions (MSCA).</li>	
+</ul>
+</br>
+</br>
+<h4 style="text-align:right;" class="fragment" data-fragment-index="7">Thank you very much!!</h4>
+<p style="text-align:right;font-size:24px" class="fragment" data-fragment-index="7"> Web:<a href="https://sites.google.com/site/nvillami/">https://sites.google.com/site/nvillami</a></p>  
+</section>
+<section>
+<section>	
+	<h4> Splines in data science</h4> 
+	<div class="row">
+		<div class="column">   
+			<small style="text-align:left;">
+				Spline regression:
+				\begin{equation*}
+				y_i=\begin{cases}
+				\beta_{01}+\beta_{11}x_i+\beta_{21}x_i^2+\beta_{31}x_i^3+\varepsilon_i\,,\;\text{if}\quad x_i< c\,,\\
+				\beta_{02}+\beta_{12}x_i+\beta_{22}x_i^2+\beta_{32}x_i^3+\varepsilon_i\,,\;\text{if}\quad x_i\geq c\,.
+				\end{cases}
+				\end{equation*}</small>
+		</div>
+		<div class="column">
+		</div>
+	</div> 
+	<small style="text-align:left;">
+		<img src="../../Figures/splines_esl.png" align="right" style="width:50%">
+		</br>Controlling smoothness at interfaces. 
+		Particularly relevant in spatial statistics:
+		<img src="../../Figures/terrain2.png" style="width:50%">
+		</small>
+	</section> 
+<section>
+	<h4> Splines in machine learning</h4> 
+	<div class="row">
+		<div class="colummn left">   
+			<small style="text-align:left;">
+			</br>
+			Mathematical foundations:
+			<ul>
+				<li>approximation theory,
+				</li> 
+				<li>optimization.
+				</li>
+			</ul></br></br>
+	Similar applications:
+	<ul>
+		<li> geometric modelling.
+		</li>
+		<li> computer vision.
+		</li>
+	</ul>
+</small>
+</div>
+<div class="colummn right">
+<img src="../../Figures/gdl.png" style="width:100%">    
+</div>
+</div> 
+<p style="text-align:left;font-size:20px" >Examples for spatial aggregation in geometric deep learning with trainable, continuous kernel functions, showing methods for (a) image graph representations and (b) meshes.</p>
+<p style="text-align:left;font-size:20px">
+</br>
+<a href="https://doi.org/10.1109/CVPR.2018.00097">SplineCNN: Fast Geometric Deep Learning with Continuous B-Spline Kernels</a>, M. Fey, J. Lenssen, F. Weichert, H. Müller, 2018, IEEE-CVF Conference on Computer Vision and Pattern Recognition.</br>
+<span style="color: #2a76dd;">Spline parameterization of neural network controls for deep learning</span>, S. Günther, Will Pazner, D. Qi <a href="http://arxiv.org/abs/2103.00301">[arXiv:2103.00301]</a>, 2021.
+</p>
+</section>
+</section>	
+</div>
+
+  </div>
+
+  <script src="../dist/reveal.js"></script>
+  <script src="../plugin/markdown/markdown.js"></script>
+  <script src="../plugin/math/math.js"></script>
+  <script>
+   Reveal.initialize({dependencies: [
+     { src: './mouse-pointer.js' }],
+    history: true,
+    transition: 'linear',
+
+    math: {
+     // mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+     config: 'TeX-AMS_HTML-full',
+     TeX: {
+      Macros: {
+       R: '\\mathbb{R}',
+       set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+      }
+     }
+    },
+
+    plugins: [ RevealMarkdown, RevealMath ]
+   });
+  </script>
+
+ </body>
+</html>
