@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js - Math Plugin</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/whiteme.css" id="theme">
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<div class="slides">
+<section>
+				<h3>Funciones de polinomios sobre complejos simpliciales</h3>
+				<small><a href="https://sites.google.com/site/nvillami/">Nelly Villamizar</a><br>Departmento de Matemáticas, Universidad de Swansea
+					
+<p></p><br><br><br><br>	<ul>		
+	Días de combinatoria, <a href="https://sites.google.com/view/dias2023">Bucaramanga</a>, 2023</ul></small>
+	</section>
+<section><section> 
+<div class="r-stack">
+<img src="../../Figures/splines01.JPG">
+<p class="fragment"><b style="color:white;">Splines</b></p>
+</div>	</section><section>
+	<div class="r-stack">
+		<img src="../../Figures/SplineInUseAnalog.JPG">
+		</div>	
+	</section>
+</section>					<section>
+					<section>
+						<figure><img src="../../Figures/courant_pic.jpg" alt="courant" style="width:85%"><figcaption><small>R. Courant (1949)</small></figcaption></figure>
+
+</section>
+
+<section>
+<h4>Método de los elementos finitios (MEF) para resolver EDP</br></br></h4>
+<div class="row">
+		<div class="column">
+		<div class="r-stack">
+			<img src="../../Figures/courant-white.png" style="width:50%" class="fragment fade-out" data-fragment-index="0">
+				<img src="../../Figures/loopSuport.png" style="width:50%" class="fragment">
+		</div>
+	</div>
+		<div class="column">
+			<div class="r-stack">
+				<img src="../../Figures/courant_hat.png" style="width:75%" class="fragment fade-out" data-fragment-index="0">
+				<img src="../../Figures/loop2.png" style="width:75%" class="fragment">
+			</div>
+		</div>
+	</div>
+</section>
+<section><div class="row"><div class="column">
+						<figure><img src="../../Figures/bezier.jpg" alt="Bezier" style="width:80%"><figcaption><small>P. Bézier (Renault)</small></figcaption></figure></div> <div class="column"> <figure><img src="../../Figures/casteljau.jpeg"  alt="de Casteljau" style="width:85%"><figcaption><small>P. de Casteljau (Citröen)</small></figcaption> </figure>   </div>
+</div>
+</section>
+<section><div class="row">
+	<div class="column"> <figure><img src="../../Figures/B.png"  alt="spline" style="width:90%"><figcaption><small>Curvas de Bézier</small></figcaption> </figure>   
+	</div>
+	<div class="column">
+		<figure><img src="../../Figures/S.jpg" alt="Bezier" style="width:50%"><figcaption><small>Fondo Times Roman de Postscript</small></figcaption> </figure> 
+	</div> 
+	</div>
+<img src="../../Figures/bsplines1.png" alt="Bezier" style="width:40%">
+</section>
+<section>
+<figure><img src="../../Figures/avion_mesh.png" style="width:75%"><figcaption><small>Analysis Isogeométrico</small></figcaption></figure> 
+</section>
+<section>
+<figure><img src="../../Figures/GarisGame.jpg" style="width:75%"><figcaption><small>Superficies subdivididas</small></figcaption></figure> 
+</section>
+<section>
+<figure><img src="../../Figures/techo.jpg" style="width:100%"><figcaption><small>Geometría Arquitectónica</small></figcaption></figure> 
+</section>
+</section>
+
+<section>
+	<h4>Funciones de polinomios a trozos</h4>
+<div class="row">
+	<div class="column">	
+		<video data-autoplay src="../../Figures/timely_crop.mp4" style="width:70%">
+		</video>
+	</div>
+	<div class="column">
+<small>\[\mathbf{p}_1=(1-t)\mathbf{c}_1+t\mathbf{c}_2\qquad
+		 \mathbf{p}_2=(1-t)\mathbf{c}_2+t\mathbf{c}_3\\
+		 \mathbf{p}_3=(1-t)\mathbf{c}_3+t\mathbf{c}_4\\
+		 \mathbf{q}_1=(1-t)\mathbf{p}_1+t\mathbf{p}_2\qquad
+		 \mathbf{q}_2=(1-t)\mathbf{p}_2+t\mathbf{p}_3\]</small>
+<div class="r-stack">
+	<p class="fragment fade-out" data-fragment-index="0">
+		<img src="../../Figures/Bezier-2.png" style="width:50%"><img src="../../Figures/Bezier-3.png" style="width:50%"></p>
+	<p class="fragment">
+		<img src="../../Figures/Bcubic-3.png" style="width:70%"></p>
+</div>					
+
+	</div>	
+</div>
+<small>\[\begin{aligned} \mathbf{s}&amp;\; =\;(1-t)\mathbf{q}_1+t\mathbf{q}_2
+	 \; =\;  (1-t)^3\mathbf{c}_1+3t(1-t)^2\mathbf{c}_2+3t^2(1-t)\mathbf{c}_3+t^3\mathbf{c}_4
+	 \end{aligned}\]</br></small>
+</section>
+<section>
+	<h3>Splines multivariados</h3>
+<div class="row">
+	<div class="column">	
+		<video data-autoplay loop src="../../Figures/tensor2.mp4" style="width:80%">
+		</video>
+		 <small> García-Puente, Sottile and Chungang
+		</small>
+	</div>
+	<div class="column">
+<img src="../../Figures/ms-b.png" style="width:70%">
+<img src="../../Figures/torus1.png" style="width:34%">
+<img src="../../Figures/cube-ps.png" style="width:42%">
+ </div>	
+</div>
+<img src="../../Figures/twotriangles-a.png" style="width:10%">
+<small> Una pareja $(f,g)$ es $C^r$-continua a través de una cara común si y sólo si  \[f - g = \ell^{r+1} h \Leftrightarrow f-g\in \langle \ell^{r+1}\rangle	\]
+	&nbsp; &nbsp; <a href="https://projecteuclid.org/euclid.bams/1183535131">Strang (1973) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a>&nbsp;&nbsp;<a href="https://doi.org/10.1090/S0002-9947-1988-0965757-9">Billera (1988) &nbsp; &nbsp; &nbsp; &nbsp;</a>
+	</small>
+</section>
+<section>
+<h3>Splines e ideales de puntos gordos</h3>
+<p class="fragment" data-fragment-index="1">$\ell=a x+b y+c z\quad \longleftrightarrow \quad P = [a :b:c]\in \mathbb{P}^ 2 $</p>	
+<p class="fragment" data-fragment-index="2">$\langle \ell_1^{r+1}, \cdots, \ell_m^{r+1}\rangle_d \quad \longleftrightarrow \quad \wp_1^{d-r}\cap\cdots\cap\wp_m^{d-r}$</p>
+<p class="fragment" data-fragment-index="3"><img src="../../Figures/fan-a.png" style="width:35%">
+<img src="../../Figures/plot6-a.png" style="width:20%"></p>
+</section>
+
+<section><section>
+<h3>Splines, Algebra y Combinatoria</h3>
+	<div class="row">
+	<div class="columna">
+<img src="../../Figures/oct3.png" style="width:100%">
+	</div>
+			<div class="columna">
+<img src="../../Figures/gen.png" style="width:100%">
+	</div>	<div class="columna">
+<img src="../../Figures/bipyramid-a.png" style="width:100%">
+	</div>	
+</div></section>
+<section><h3>El grafo dual</h3>
+<div class="row">
+	<div class="columna">	
+	<img src="../../Figures/graph_regOcta.png" style="width:92%">
+	</div>	
+<div class="columna">
+		<img src="../../Figures/graph_genOctahedron2.png" style="width:82%">
+	</div><div class="columna">	
+			<img src="../../Figures/graph_bipyramid-a.png" style="width:94%">
+		</div>	
+	</div>
+</section>
+</section>
+<section data-markdown>
+	<small type="text/template">
+		## Problemas abiertos
+		- Representación de formas complejas: objetos con topología arbitraria, ajuste y aplicaciones de análisis isogeométrico.<!-- .element: class="fragment" data-fragment-index="2" -->
+		- Dimensión de splines multivariados: dimensión de ideales de puntos gordos, anillo de Stanley-Reisner y formulas combinatorias, construcción de bases. </br>	<img src="../../Figures/cloud1-a.png" style="width:30%"><img src="../../Figures/cloud2-a.png" style="width:30%"><!-- .element: class="fragment" data-fragment-index="1" -->	
+		
+	</small>
+
+		</section>
+
+<section><small><ul>
+		<li>Splines en una variable, curvas de Bézier</li>
+		<li>Complejos simpliciales, variedades algebracas, ordenes monomiales, bases de Gröbner.</li>
+		<li>Grafo dual, anillo de Stanley-Reisner.</li>
+	</ul></small>
+	
+	<div class="row"><div class="column">
+			<figure><img src="../../Figures/Macaulay.jpg" alt="macaulay" style="width:85%"><figcaption><small>F. Macaulay (1862-1937) </small></figcaption></figure></div> <div class="column"> <figure><img src="../../Figures/macaulay2.jpg"  alt="de Casteljau" style="width:68%"><figcaption><small> <a href="https://macaulay2.com/">Macaulay2</small></a></figcaption> </figure>   </div>
+			</div>
+		</section>
+
+			</div>
+
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/math/math.js"></script>
+		<script>
+			Reveal.initialize({dependencies: [
+					{ src: './mouse-pointer.js' }],
+				history: true,
+				transition: 'linear',
+
+				math: {
+					// mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+					config: 'TeX-AMS_HTML-full',
+					TeX: {
+						Macros: {
+							R: '\\mathbb{R}',
+							set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+						}
+					}
+				},
+
+				plugins: [ RevealMarkdown, RevealMath ]
+			});
+		</script>
+
+	</body>
+</html>
