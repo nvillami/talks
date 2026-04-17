@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+ <head>
+  <meta charset="utf-8">
+
+  <title>reveal.js - Math Plugin</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <link rel="stylesheet" href="../dist/reveal.css">
+  <link rel="stylesheet" href="../dist/theme/whiteme.css" id="theme">
+  	<link rel="stylesheet" href="../plugin/highlight/monokai.css">
+  <style>
+   div.fixed {
+   position: fixed;
+   top: 0;
+   right: -70px;
+   width: 300px;
+   }
+  </style>
+  <style>
+  div.fijo {
+  position: fixed;
+  bottom:-100px;
+  right: -100px;
+  width: 500px;
+  }
+ </style> 
+  <style>
+	div.fijos {
+	position: fixed;
+	bottom:-50px;
+	right: -100px;
+	width: 500px;
+	}
+</style>  
+<style>
+ table, th, td {
+ border: 1px solid black;
+ border-collapse: collapse;
+ }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+  * {
+  box-sizing: border-box;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  .columnn {
+  float: left;
+  padding: 10px;
+  }
+  
+  .left {
+  width: 70%;
+  }
+  
+  .right {
+  width: 40%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+ </style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <style>
+  * {
+  box-sizing: border-box;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  .colummn {
+  float: left;
+  padding: 10px;
+  }
+  
+  .left {
+  width: 45%;
+  }
+  
+  .right {
+  width: 55%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;l
+  clear: both;
+  }
+ </style>
+ </head>
+
+ <body>
+
+  <div class="reveal">
+
+   <div class="slides">
+<section>
+    <h4>Commutative Algebra in Approximation Theory</h4>
+    <small>
+  <div class="row">
+  <div class="column">
+<a href="https://sites.google.com/site/nvillami/">Nelly Villamizar</a><br>
+ Swansea University
+  </div>
+  <div class="column">
+<a href="https://midipasq.github.io">Michael DiPasquale</a>
+    <br>New Mexico State University
+  </div>
+</div>   
+<p></p><br><br><br><br>  
+<a href="http://www.fields.utoronto.ca/activities/24-25/commutative-algebra-applications">Workshop on the Applications of Commutative Algebra</a><br>  
+The Fields Institute, May 26, 2025</small>
+ </section>
+ <section>
+  <h4>The Courant hat function</h4>
+  <div>
+    <img src="../../Figures/courant_pic.jpg" style="width:45%;">
+    <span style="font-size:0.8em;">Courant (1888–1972)</span>
+  </div>
+  <div style="position:absolute; top:20px; right:50px;">
+    <img src="../Figures/Courant.png" style="width:25%;">
+  </div>
+  <div style="position:absolute; bottom:30px; right:50px; transform: rotate(-45deg);">
+    <img src="../Figures/courant1.png" style="width:20%;">
+  </div>
+</section>
+<section>
+  <h4>Bézier curves</h4>
+  <div>
+    <img src="../Figures/bezier.jpg" style="width:45%; display:inline-block;">
+    <img src="../Figures/casteljau.png" style="width:45%; display:inline-block;">
+  </div>
+  <div style="font-size:0.7em; margin-top:5px;">
+    Bézier (1910–1999)&nbsp;&nbsp;&nbsp;&nbsp;De Casteljau (1930–2022)
+  </div>
+  <div style="margin-top:20px;">
+    <img src="../Figures/Bcubic-3.png" style="width:40%; float:right;">
+    <img src="../Figures/C1smooth.png" style="width:30%; float:right; margin-right:20px;">
+  </div>
+</section>
+<section>
+  <h4>Spline functions (definition)</h4>
+  <p><b><span style="color:#b22222;">Spline functions</span></b> are piecewise polynomial functions with a specified degree of smoothness on polyhedral partitions in \( \mathbb{R}^n \).</p>
+  
+  <p><b><span style="color:#003366;">Ex:</span></b> A spline function on \([a,c] \cup [c,b]\) is any function of the form:</p>
+  \[
+  f(x) = \begin{cases}
+    f_1(x) & \text{if } x \in [a, c] \\
+    f_2(x) & \text{if } x \in [c, b]; \quad \text{for } f_1(x), f_2(x) \in \mathbb{R}[x].
+  \end{cases}
+  \]
+  
+  <img src="../Figures/segmentabc.png" style="width:25%;">
+
+  <p>Taking \( a = 0 \), \( c = 2 \), and \( b = 4 \), then:</p>
+  \[
+  f(x) = \begin{cases}
+    x & \text{if } x \in [0,2] \\
+    -x^2 + 5x - 4 & \text{if } x \in [2,4]
+  \end{cases}
+  \]
+  
+  <div style="position:absolute; bottom:20px; right:50px;">
+    <img src="../Figures/exp5.png" style="width:30%;">
+  </div>
+</section>
+<section> 
+<h4>Discrete Algebra and Geometry Group (DAG)</h4>
+<span style="font-size:24px;"> 
+<ul>
+<li class="fragment" data-fragment-index="1"><a href="https://www.tue.nl/en/research/research-groups/mathematics/discrete-mathematics#">DM</a> Discrete Mathematics cluster (symmetry, and tensor decomposition, applications to signal processing, numerical linear algebra, computer vision, and data science).	</li>
+<li class="fragment"  data-fragment-index="2">Department of Mathematics and Computer Science:
+<ul>
+	<li>Algorithms, Geometry and Applications (<a href="https://alga.win.tue.nl">ALGA</a>)</li>
+		<li> Visualization (<a href="https://www.tue.nl/en/research/research-groups/data-science/visualization/visualization">VIZ</a>)</li>
+		<li><a href="https://www.tue.nl/en/research/research-groups/mathematics/center-for-analysis-scientific-computing-and-applications/scientific-computing-1">Scientific Computing</a>.
+</li>
+</ul>		
+<li class="fragment" data-fragment-index="3">Department of <a href="https://www.tue.nl/en/our-university/departments/mechanical-engineering">Mechanical Engineering</a> and <a href="https://www.tue.nl/en/our-university/departments/industrial-design">Industrial Design</a>; <a href="https://asci.tudelft.nl">ASCI</a> Advanced School for Computing and Imaging</li>
+<li class="fragment" data-fragment-index="4">The DAG group as a beacon for
+	applied algebra and geometry in Europe for graduate students and researchers, with experts in Topological
+	Data Analysis, Combinatorics, Computer Algebra, Algebraic Statistics, and
+	Algebraic Spline Geometry.</li>
+<li  class="fragment" data-fragment-index="5">External funding initiatives within the Dutch Research Council (NWO), European Research Council (ERC), and the European Science Foundation (ESF) remit.</li>
+<li class="fragment" data-fragment-index="6">Doctoral Networks Marie Skłodowska-Curie Actions (MSCA).</li>	
+</ul>
+</br>
+<h4 style="text-align:right;" class="fragment" data-fragment-index="7">Thank you very much!!</h4>
+<p style="text-align:right;font-size:24px" class="fragment" data-fragment-index="7"> Web: <a href="https://sites.google.com/site/nvillami/">https://sites.google.com/site/nvillami</a></p>  
+</section>
+
+</div>
+
+  </div>
+
+  <script src="../dist/reveal.js"></script>
+  <script src="../plugin/markdown/markdown.js"></script>
+  <script src="../plugin/math/math.js"></script>
+  <script>
+   Reveal.initialize({dependencies: [
+     { src: './mouse-pointer.js' }],
+    history: true,
+    transition: 'linear',
+
+    math: {
+     // mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+     config: 'TeX-AMS_HTML-full',
+     TeX: {
+      Macros: {
+       R: '\\mathbb{R}',
+       set: [ '\\left\\{#1 \\; ; \\; #2\\right\\}', 2 ]
+      }
+     }
+    },
+
+    plugins: [ RevealMarkdown, RevealMath ]
+   });
+  </script>
+
+ </body>
+</html>
