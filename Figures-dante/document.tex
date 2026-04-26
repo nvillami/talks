@@ -1,0 +1,49 @@
+\documentclass[]{standalone}
+\usepackage{xcolor}
+
+
+
+%%FiraFonts
+%\usepackage[sfdefault,light]{FiraSans}
+%\usepackage{FiraMono}
+%% Use thinner fonts
+%\makeatletter
+%\def\bfseries@sf{c}
+%\def\mdseries@sf{l}
+%\makeatother
+
+
+%\RequirePackage[T1]{fontenc}
+%\usepackage{lmodern}
+%
+\usepackage{graphicx}
+\usepackage{tikz}
+
+
+\begin{document}
+	
+		\begin{tikzpicture}{\small
+				\draw[thick,blue] (-1,0) -- (-1,1) node[left,midway] {$\Gamma_{in}$}; % left
+				\draw[ thick] (-1,1) -- (5,1) node[above,midway] {$\Gamma_{w}$}; % top
+				\draw[ thick] (-1,0) -- (0,0) node[below,near start] {$\Gamma_{w}$}; % top of the step
+				\draw[ thick,red] (0,0) -- (0,-1) node[right,midway] {$\Gamma_{u}$};  % left of the step
+				\draw[ thick] (0,-1) -- (5,-1) node[below,midway] {$\Gamma_{w}$}; % bottom
+				\draw[thick,dashed] (5,-1) -- (5,1) node[right,midway] {$\Gamma_{out}$}; % right
+				
+				Inflow arrows g=4 y (1-y)
+				\draw[->,blue] (-1,0.125) -- (-0.5625,0.125);
+				\draw[->,blue] (-1,0.250) -- (-0.2500,0.250);
+				\draw[->,blue] (-1,0.375) -- (-0.0625,0.375);
+				\draw[->,blue] (-1,0.500) -- ( 0.0000,0.500) node[pos=0.5,anchor=center] {$g$};
+				\draw[->,blue] (-1,0.625) -- (-0.0625,0.625);
+				\draw[->,blue] (-1,0.750) -- (-0.2500,0.750);
+				\draw[->,blue] (-1,0.875) -- (-0.5625,0.875);
+				
+				Corners
+				\node[anchor=south] at (-1,1.02) {$(-1,1)$};
+				\node[anchor=south] at (5,1.02) {$(5,1)$};
+				\node[anchor=north] at (0,-1.02) {$(0,-1)$};
+				\node[anchor=west] at (-0.05,0.05) {$(0,0)$};
+			}
+		\end{tikzpicture}
+\end{document}
